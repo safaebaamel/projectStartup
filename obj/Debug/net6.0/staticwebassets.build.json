@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "1oUbX8sucXsRFBvouQdBdcHh5u2oYzXGBUJIamey2ks=",
+  "Source": "gitlabApi",
+  "BasePath": "_content/gitlabApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
