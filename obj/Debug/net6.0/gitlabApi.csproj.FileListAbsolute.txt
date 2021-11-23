@@ -26,3 +26,6 @@ C:\Users\Safae Baamel\Desktop\projectStartup\obj\Debug\net6.0\ref\gitlabApi.dll
 C:\Users\Safae Baamel\Desktop\projectStartup\obj\Debug\net6.0\gitlabApi.pdb
 C:\Users\Safae Baamel\Desktop\projectStartup\obj\Debug\net6.0\gitlabApi.genruntimeconfig.cache
 C:\Users\Safae Baamel\Desktop\projectStartup\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\Safae Baamel\Desktop\projectStartup\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\Safae Baamel\Desktop\projectStartup\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\Safae Baamel\Desktop\projectStartup\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

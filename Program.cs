@@ -1,3 +1,6 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using gitlab.Controllers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
@@ -10,18 +13,28 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
-                      builder =>
-                      {
-                          builder.WithOrigins("http://example.com",
-                                              "http://www.contoso.com");
-                      });
+    builder =>
+            {
+                builder.WithOrigins("http://example.com",
+                                    "http://www.contoso.com");
+            });
 });
+
 // Controllers
 builder.Services.AddControllers();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddMvc(setup => 
+    {
+      //...mvc setup...
+    }).AddFluentValidation();
+
+builder.Services.AddMvc()
+  .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ProjectValidator>());
+
 IServiceCollection serviceCollection = builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
@@ -36,7 +49,7 @@ IServiceCollection serviceCollection = builder.Services.AddSwaggerGen(options =>
         Url = "https://localhost/api/v4/",
         Description = "Gitlab API"
     });
-    
+    options.EnableAnnotations();
 });
 
 var app = builder.Build();
@@ -58,6 +71,3 @@ app.UseRouting();
 
 app.UseCors(MyAllowSpecificOrigins);
 app.Run();
-
-
-
