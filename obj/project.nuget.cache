@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "X0G5xrrxUuEVBi4j4Wo2VAzi0yGfwH64M3ro3/Ad4/eHFina3u8J0VhdkSDQSiT4ZTRkPqBJW8P73R8E1Jqidg==",
+  "dgSpecHash": "hTLXeReXsHZxwegwfSEtS5IK52yQk+ftL+m0E6uTdeWg7ZnIyXHi7ItXdBfJACwZeObOgqG/Bl90bbJlMl9MPw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Safae Baamel\\Desktop\\projectStartup\\gitlabApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Safae Baamel\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Safae Baamel\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\Safae Baamel\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Safae Baamel\\.nuget\\packages\\swashbuckle.aspnetcore.annotations\\6.2.3\\swashbuckle.aspnetcore.annotations.6.2.3.nupkg.sha512",
     "C:\\Users\\Safae Baamel\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\Safae Baamel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
     "C:\\Users\\Safae Baamel\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
