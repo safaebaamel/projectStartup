@@ -7,6 +7,22 @@ namespace Gitlab.Dto
         public string? name { get; set; }
     }
 
-    
+    public class IssueDto {
+        
+        public string? title { get; set; }
+        public string? description { get; set; }
+
+    }
+
+    public class CommentDto {
+        public string? note { get; set; }
+    }
+
+    public class LabelDto {
+        public string? name { get; set; }
+
+        public string? color { get; set; }
+    }
+
 }
 

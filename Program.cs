@@ -1,14 +1,13 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using gitlab.Controllers;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
-using Swashbuckle.AspNetCore.Swagger;
-using Swashbuckle.AspNetCore.SwaggerGen;
 
 var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddHttpClient();
 
 builder.Services.AddCors(options =>
 {

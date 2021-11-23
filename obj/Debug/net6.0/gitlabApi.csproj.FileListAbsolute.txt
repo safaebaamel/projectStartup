@@ -29,3 +29,4 @@ C:\Users\Safae Baamel\Desktop\projectStartup\bin\Debug\net6.0\Swashbuckle.AspNet
 C:\Users\Safae Baamel\Desktop\projectStartup\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\Safae Baamel\Desktop\projectStartup\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\Users\Safae Baamel\Desktop\projectStartup\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\Safae Baamel\Desktop\projectStartup\bin\Debug\net6.0\Newtonsoft.Json.dll
