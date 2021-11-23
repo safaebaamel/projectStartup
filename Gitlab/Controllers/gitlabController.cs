@@ -1,18 +1,21 @@
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using FluentValidation;
-using System.Text;
-using Newtonsoft.Json;
 using Gitlab.Dto;
 
 namespace gitlab.Controllers;
 
 [Route("projects")]
+[SwaggerResponse(201, "Request was successfull")]
+[SwaggerResponse(400, "Invalid request")]
 [Produces("application/json")]
 [ApiController]
 
 public class GitlabController : ControllerBase
 {
+
+    private readonly HttpClient _httpClient = new HttpClient();
+
     // GET: api/Gitlab
     [HttpGet]
     [SwaggerOperation(
@@ -21,9 +24,10 @@ public class GitlabController : ControllerBase
         OperationId = "Get all projects",
         Tags = new[] { "Projects" }
     )]
-    public void test([FromHeader(Name = "PRIVATE-TOKEN")] string token)
+    public async Task<HttpResponseMessage> GetProjects([FromHeader(Name = "PRIVATE-TOKEN")] string token)
     {
-        Console.WriteLine("test");
+        return await _httpClient.GetAsync("");
+
     }
 
     // POST: api/Gitlab
@@ -35,9 +39,9 @@ public class GitlabController : ControllerBase
         Tags = new[] { "Projects" }
 
     )]
-    public void CreateProject([FromHeader(Name = "PRIVATE-TOKEN")] string token, ProjectDto project)
+    public async Task CreateProject([FromHeader(Name = "PRIVATE-TOKEN")] string token, ProjectDto project)
     {
-        
+        return await _httpClient.PostAsync("", project);
     }
 
     [HttpGet("{id}")]
