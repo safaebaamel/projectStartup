@@ -39,9 +39,9 @@ public class GitlabController : ControllerBase
         Tags = new[] { "Projects" }
 
     )]
-    public async Task CreateProject([FromHeader(Name = "PRIVATE-TOKEN")] string token, ProjectDto project)
+    public async void CreateProject([FromHeader(Name = "PRIVATE-TOKEN")] string token, ProjectDto project)
     {
-        return await _httpClient.PostAsync("", project);
+        await _httpClient.PostAsJsonAsync("", project);
     }
 
     [HttpGet("{id}")]
