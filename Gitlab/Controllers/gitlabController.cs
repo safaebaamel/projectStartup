@@ -13,7 +13,7 @@ namespace gitlab.Controllers;
 
 public class GitlabController : ControllerBase
 {
-
+//giorVSnFGKzvPs8QZVsi
     private readonly HttpClient _httpClient = new HttpClient();
 
     // GET: api/Gitlab
@@ -24,10 +24,9 @@ public class GitlabController : ControllerBase
         OperationId = "Get all projects",
         Tags = new[] { "Projects" }
     )]
-    public async Task<HttpResponseMessage> GetProjects([FromHeader(Name = "PRIVATE-TOKEN")] string token)
+    public async Task GetProjects([FromHeader(Name = "PRIVATE-TOKEN")] string token)
     {
-        return await _httpClient.GetAsync("");
-
+        await _httpClient.GetAsync("");
     }
 
     // POST: api/Gitlab
@@ -37,7 +36,6 @@ public class GitlabController : ControllerBase
         Description = "Requires admin privileges",
         OperationId = "Create a new project",
         Tags = new[] { "Projects" }
-
     )]
     public async void CreateProject([FromHeader(Name = "PRIVATE-TOKEN")] string token, ProjectDto project)
     {
@@ -51,9 +49,9 @@ public class GitlabController : ControllerBase
         OperationId = "Get a project",
         Tags = new[] { "Projects" }
     )]
-    public void GetProject([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id)
+    public async void GetProject([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id)
     {
-        
+        await _httpClient.GetAsync("");
     }
 
     [HttpPut("{id}")]
@@ -63,9 +61,9 @@ public class GitlabController : ControllerBase
         OperationId = "Update a project",
         Tags = new[] { "Projects" }
     )]
-    public void UpdateProject([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, ProjectDto project)
+    public async Task UpdateProject([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, ProjectDto project)
     {
-        
+        await _httpClient.PutAsJsonAsync("", project);
     }
 
     [HttpDelete("{id}")]
@@ -75,9 +73,9 @@ public class GitlabController : ControllerBase
         OperationId = "Delete a project",
         Tags = new[] { "Projects" }
     )]
-    public void DeleteProject([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id)
+    public async Task DeleteProject([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id)
     {
-        
+        await _httpClient.DeleteAsync("");
     }
 
     // issues
@@ -88,9 +86,9 @@ public class GitlabController : ControllerBase
         OperationId = "Get all issues",
         Tags = new[] { "Issues" }
     )]
-    public void GetIssues([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id)
+    public async Task GetIssues([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id)
     {
-        
+        await _httpClient.GetAsync("");
     }
 
     [HttpGet("{id}/issues/{issue_iid}")]
@@ -100,9 +98,9 @@ public class GitlabController : ControllerBase
         OperationId = "Get an issue",
         Tags = new[] { "Issues" }
     )]
-    public void GetIssue([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid)
+    public async Task GetIssue([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid)
     {
-        
+        await _httpClient.GetAsync("");
     }
 
     [HttpPost("{id}/issues")]
@@ -112,9 +110,9 @@ public class GitlabController : ControllerBase
         OperationId = "Create an issue",
         Tags = new[] { "Issues" }
     )]
-    public void CreateIssue([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, IssueDto issue)
+    public async Task CreateIssue([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, IssueDto issue)
     {
-        
+        await _httpClient.PostAsJsonAsync("", issue);
     }
 
     [HttpPut("{id}/issues/{issue_iid}")]
@@ -124,9 +122,9 @@ public class GitlabController : ControllerBase
         OperationId = "Update an issue",
         Tags = new[] { "Issues" }
     )]
-    public void UpdateIssue([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid, IssueDto issue)
+    public async Task UpdateIssue([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid, IssueDto issue)
     {
-        
+        await _httpClient.PutAsJsonAsync("", issue);
     }
 
     [HttpDelete("{id}/issues/{issue_iid}")]
@@ -136,9 +134,9 @@ public class GitlabController : ControllerBase
         OperationId = "Delete an issue",
         Tags = new[] { "Issues" }
     )]
-    public void DeleteIssue([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid)
+    public async Task DeleteIssue([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid)
     {
-        
+        await _httpClient.DeleteAsync("");
     }
 
     // comment on an issue
@@ -149,9 +147,9 @@ public class GitlabController : ControllerBase
         OperationId = "Create a comment on an issue",
         Tags = new[] { "Issues" }
     )]
-    public void CreateComment([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid, CommentDto comment)
+    public async Task CreateComment([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid, CommentDto comment)
     {
-        
+        await _httpClient.PostAsJsonAsync("", comment);
     }
 
     [HttpGet("{id}/issues/{issue_iid}/notes")]
@@ -161,9 +159,9 @@ public class GitlabController : ControllerBase
         OperationId = "Get all comments on an issue",
         Tags = new[] { "Issues" }
     )]
-    public void GetComments([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid)
+    public async Task GetComments([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid)
     {
-        
+        await _httpClient.GetAsync("");
     }
 
     [HttpGet("{id}/issues/{issue_iid}/notes/{note_id}")]
@@ -173,9 +171,9 @@ public class GitlabController : ControllerBase
         OperationId = "Get a comment on an issue",
         Tags = new[] { "Issues" }
     )]
-    public void GetComment([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid, int note_id)
+    public async Task GetComment([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid, int note_id)
     {
-        
+        await _httpClient.GetAsync("");
     }
 
     [HttpPut("{id}/issues/{issue_iid}/notes/{note_id}")]
@@ -185,9 +183,9 @@ public class GitlabController : ControllerBase
         OperationId = "Update a comment on an issue",
         Tags = new[] { "Issues" }
     )]
-    public void UpdateComment([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid, int note_id, CommentDto comment)
+    public async Task UpdateComment([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid, int note_id, CommentDto comment)
     {
-        
+        await _httpClient.PutAsJsonAsync("", comment);
     }
 
     [HttpDelete("{id}/issues/{issue_iid}/notes/{note_id}")]
@@ -197,9 +195,9 @@ public class GitlabController : ControllerBase
         OperationId = "Delete a comment on an issue",
         Tags = new[] { "Issues" }
     )]
-    public void DeleteComment([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid, int note_id)
+    public async Task DeleteComment([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int issue_iid, int note_id)
     {
-        
+        await _httpClient.DeleteAsync("");
     }
 
     // labels
@@ -210,9 +208,9 @@ public class GitlabController : ControllerBase
         OperationId = "Get all labels",
         Tags = new[] { "Labels" }
     )]
-    public void GetLabels([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id)
+    public async Task GetLabels([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id)
     {
-        
+        await _httpClient.GetAsync("");
     }
 
     [HttpGet("{id}/labels/{label_id}")]
@@ -222,9 +220,9 @@ public class GitlabController : ControllerBase
         OperationId = "Get a label",
         Tags = new[] { "Labels" }
     )]
-    public void GetLabel([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int label_id)
+    public async Task GetLabel([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int label_id)
     {
-        
+        await _httpClient.GetAsync("");
     }
 
     [HttpPost("{id}/labels")]
@@ -234,9 +232,9 @@ public class GitlabController : ControllerBase
         OperationId = "Create a label",
         Tags = new[] { "Labels" }
     )]
-    public void CreateLabel([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, LabelDto label)
+    public async Task CreateLabel([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, LabelDto label)
     {
-        
+        await _httpClient.PostAsJsonAsync("", label);
     }
 
     [HttpPut("{id}/labels/{label_id}")]
@@ -246,9 +244,9 @@ public class GitlabController : ControllerBase
         OperationId = "Update a label",
         Tags = new[] { "Labels" }
     )]
-    public void UpdateLabel([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int label_id, LabelDto label)
+    public async Task UpdateLabel([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int label_id, LabelDto label)
     {
-        
+        await _httpClient.PutAsJsonAsync("", label);
     }
 
     [HttpDelete("{id}/labels/{label_id}")]
@@ -258,9 +256,9 @@ public class GitlabController : ControllerBase
         OperationId = "Delete a label",
         Tags = new[] { "Labels" }
     )]
-    public void DeleteLabel([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int label_id)
+    public async Task DeleteLabel([FromHeader(Name = "PRIVATE-TOKEN")] string token, int id, int label_id)
     {
-        
+        await _httpClient.DeleteAsync("");
     }
 }
 

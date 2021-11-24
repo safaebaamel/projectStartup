@@ -15,7 +15,7 @@ namespace Gitlab.Dto
     }
 
     public class CommentDto {
-        public string? note { get; set; }
+        public string? body { get; set; }
     }
 
     public class LabelDto {
