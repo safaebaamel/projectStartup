@@ -11,9 +11,10 @@ namespace gitlab.Controllers;
 [Produces("application/json")]
 [ApiController]
 
+
 public class GitlabController : ControllerBase
 {
-//giorVSnFGKzvPs8QZVsi
+
     private readonly HttpClient _httpClient = new HttpClient();
 
     // GET: api/Gitlab
@@ -37,6 +38,10 @@ public class GitlabController : ControllerBase
         OperationId = "Create a new project",
         Tags = new[] { "Projects" }
     )]
+    /// <summary>
+    /// The name of the product
+    /// </summary>
+    /// <example>Men's basketball shoes</example>
     public async void CreateProject([FromHeader(Name = "PRIVATE-TOKEN")] string token, ProjectDto project)
     {
         await _httpClient.PostAsJsonAsync("", project);

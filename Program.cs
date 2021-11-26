@@ -56,6 +56,7 @@ var app = builder.Build();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("v1/swagger.json", "GITLAB API V1");
+    
 });
 
 // Configure the HTTP request pipeline.

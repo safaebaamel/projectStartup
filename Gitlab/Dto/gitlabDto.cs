@@ -1,8 +1,12 @@
+using System.ComponentModel.DataAnnotations;
 using FluentValidation;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Gitlab.Dto
 {
     public class ProjectDto {
+
+        [Required]
         
         public string? name { get; set; }
     }
